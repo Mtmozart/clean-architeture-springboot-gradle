@@ -1,0 +1,9 @@
+rootProject.name = 'curso-clean-architeture'
+include 'core'
+include 'core'
+include 'useCase'
+include 'application'
+include 'infrastucture'
+include 'usecase'
+include 'usecase'
+
