@@ -1,6 +1,8 @@
 package br.com.curso.core.domain;
 
 import br.com.curso.core.domain.enums.UserTypeEnum;
+import br.com.curso.core.exception.TransferException;
+import br.com.curso.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
