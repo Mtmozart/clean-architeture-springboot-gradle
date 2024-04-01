@@ -4,6 +4,6 @@ import br.com.curso.core.domain.Wallet;
 
 import java.math.BigDecimal;
 
-public interface ConstulteBalanceUseCase {
+public interface ConsultBalanceUseCase {
     BigDecimal consulte(Wallet wallet);
 }

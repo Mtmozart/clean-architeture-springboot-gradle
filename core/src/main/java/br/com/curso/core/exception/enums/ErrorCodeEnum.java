@@ -8,9 +8,11 @@ public enum ErrorCodeEnum {
     TR0001("Usuário lojista não tem a função tranferência disponível", "TR-0001"),
     TR0002("Saldo indiponível.", "TR-0002"),
     TR0003("Houve um erro ao realizar a tranferência.", "TR-0003"),
+    TR0004("Tranferência não autorizada.", "TR-0004"),
     TRP0001("Pin inválido", "TR-0001"),
-
-    WA0001("Carteira não encontrada", "WA-0001")
+    WA0001("Carteira não encontrada", "WA-0001"),
+    NO0001("Houve um erro na notficação do usuário", "N0-0001"),
+    ATH0001("Houve um erro na autenticação", "ATH-0001")
 
        ;
     private String message;
