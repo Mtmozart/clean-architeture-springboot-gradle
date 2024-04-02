@@ -37,9 +37,11 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
             throw new EmailException(ErrorCodeEnum.ON0003.getMessage(), ErrorCodeEnum.ON0003.getCode());
         }
 
-        if(!createUserGeteway.create(user,
-                new Wallet(BigDecimal.ZERO, user),
-                new TransactionPin(user, pin)
+        if(!createUserGeteway.create(
+                user,
+                new Wallet(new TransactionPin(pin),
+                        BigDecimal.ZERO, user)
+
         )){
             throw new InternalServerErrorException(ErrorCodeEnum.ON0004.getMessage(), ErrorCodeEnum.ON0004.getCode());
         }

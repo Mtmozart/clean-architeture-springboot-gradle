@@ -6,24 +6,28 @@ import br.com.curso.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Wallet {
 
     private Long id;
+    private TransactionPin transactionPin;
     private BigDecimal balance;
     private User user;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Wallet(Long id, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Wallet(Long id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
+        this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
-    public Wallet(BigDecimal balance, User user) {
+    public Wallet(TransactionPin transactionPin, BigDecimal balance, User user) {
+        this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = LocalDateTime.now();
@@ -82,5 +86,38 @@ public class Wallet {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public TransactionPin getTransactionPin() {
+        return transactionPin;
+    }
+    public void setTransactionPin(TransactionPin transactionPin) {
+        this.transactionPin = transactionPin;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        Wallet wallet = (Wallet) object;
+
+        if (!Objects.equals(id, wallet.id)) return false;
+        if (!transactionPin.equals(wallet.transactionPin)) return false;
+        if (!balance.equals(wallet.balance)) return false;
+        if (!user.equals(wallet.user)) return false;
+        if (!createdAt.equals(wallet.createdAt)) return false;
+        return Objects.equals(updatedAt, wallet.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + transactionPin.hashCode();
+        result = 31 * result + balance.hashCode();
+        result = 31 * result + user.hashCode();
+        result = 31 * result + createdAt.hashCode();
+        result = 31 * result + (updatedAt != null ? updatedAt.hashCode() : 0);
+        return result;
     }
 }

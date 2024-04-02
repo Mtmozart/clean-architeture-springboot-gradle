@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class ConsultBalanceUseCaseImpl implements ConsultBalanceUseCase {
     private ConsultBalanceGeteway consultBalanceGeteway;
     @Override
-    public BigDecimal consulte(Wallet wallet) {
+    public BigDecimal consult(Wallet wallet) {
         return consultBalanceGeteway.consult(wallet);
     }
 }
