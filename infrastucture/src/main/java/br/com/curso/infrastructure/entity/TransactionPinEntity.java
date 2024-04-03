@@ -28,6 +28,7 @@ public class TransactionPinEntity {
     @Column(name = "UpdateAt")
     private LocalDateTime updateAt;
 
+<<<<<<< HEAD:infrastructure/src/main/java/br/com/curso/infrastructure/entity/TransactionPinEntity.java
     public TransactionPinEntity(String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.pin = pin;
         this.attempt = attempt;
@@ -35,4 +36,7 @@ public class TransactionPinEntity {
         this.createdAt = createdAt;
         this.updateAt = updateAt;
     }
+=======
+
+>>>>>>> 5b89a9e... finalizando o repository e entities:infrastucture/src/main/java/br/com/curso/entity/TransactionPinEntity.java
 }

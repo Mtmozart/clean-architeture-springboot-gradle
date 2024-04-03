@@ -1,4 +1,4 @@
-package br.com.curso.infrastructure.entity;
+package br.com.curso.entity;
 
 import br.com.curso.core.domain.enums.TransactionStatusEnum;
 import jakarta.persistence.*;
