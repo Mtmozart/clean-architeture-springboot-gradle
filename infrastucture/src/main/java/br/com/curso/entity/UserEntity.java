@@ -30,20 +30,12 @@ public class UserEntity {
     @Column(name = "Fullname", nullable = false)
     private String fullname;
     @Column(name = "Type", nullable = false)
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private UserTypeEnum type;
     @Column(name = "CreatedAt", nullable = false)
     private LocalDateTime createdAt;
     @Column(name = "UpdateAt")
     private LocalDateTime updateAt;
 
-    public UserEntity(UUID id, String email, String password, String taxNumber, String fullname, UserTypeEnum type) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.taxNumber = taxNumber;
-        this.fullname = fullname;
-        this.type = type;
-        this.createdAt = LocalDateTime.now();
-    }
+
 }

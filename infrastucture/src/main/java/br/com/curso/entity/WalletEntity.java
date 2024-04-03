@@ -5,29 +5,34 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "TransactionPin")
+@Table(name = "Wallets")
 @Entity
-public class TransactionPinEntity {
+public class WalletEntity {
     @Column(name = "id", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "Pin", nullable = false)
-    private String pin;
-    @Column(name = "Attempt", nullable = false)
-    private String attempt;
-    @Column(name = "Blocked", nullable = false)
-    private Boolean blocked;
+
+    @Column(name = "Balance", nullable = false)
+    private BigDecimal balance;
+
+    @OneToOne
+    @JoinColumn(name = "userId")
+    private UserEntity userEntity;
+
+    @OneToOne
+    @JoinColumn(name = "TransactionPin")
+    private TransactionPinEntity transactionPinEntity;
+
     @Column(name = "CreatedAt", nullable = false)
     private LocalDateTime createdAt;
     @Column(name = "UpdateAt")
     private LocalDateTime updateAt;
-
-
 }
