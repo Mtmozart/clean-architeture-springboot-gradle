@@ -15,15 +15,15 @@ public class Wallet {
     private BigDecimal balance;
     private User user;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime updateAt;
 
-    public Wallet(Long id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Wallet(Long id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updateAt) {
         this.id = id;
         this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.updateAt = updateAt;
     }
 
     public Wallet(TransactionPin transactionPin, BigDecimal balance, User user) {
@@ -80,12 +80,12 @@ public class Wallet {
         return createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdatedAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 
     public TransactionPin getTransactionPin() {
@@ -107,7 +107,7 @@ public class Wallet {
         if (!balance.equals(wallet.balance)) return false;
         if (!user.equals(wallet.user)) return false;
         if (!createdAt.equals(wallet.createdAt)) return false;
-        return Objects.equals(updatedAt, wallet.updatedAt);
+        return Objects.equals(updateAt, wallet.updateAt);
     }
 
     @Override
@@ -117,7 +117,7 @@ public class Wallet {
         result = 31 * result + balance.hashCode();
         result = 31 * result + user.hashCode();
         result = 31 * result + createdAt.hashCode();
-        result = 31 * result + (updatedAt != null ? updatedAt.hashCode() : 0);
+        result = 31 * result + (updateAt != null ? updateAt.hashCode() : 0);
         return result;
     }
 }

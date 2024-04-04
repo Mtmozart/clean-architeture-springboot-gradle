@@ -1,4 +1,4 @@
-package br.com.curso.entity;
+package br.com.curso.infrastructure.entity;
 
 import br.com.curso.core.domain.enums.UserTypeEnum;
 import jakarta.persistence.*;
@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.util.UUID;
 

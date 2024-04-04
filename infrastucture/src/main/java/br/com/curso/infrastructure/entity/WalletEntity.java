@@ -1,4 +1,4 @@
-package br.com.curso.entity;
+package br.com.curso.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -35,4 +34,13 @@ public class WalletEntity {
     private LocalDateTime createdAt;
     @Column(name = "UpdateAt")
     private LocalDateTime updateAt;
+
+
+    public WalletEntity(BigDecimal balance, UserEntity userEntity, TransactionPinEntity transactionPinEntity, LocalDateTime createdAt, LocalDateTime updateAt) {
+        this.balance = balance;
+        this.userEntity = userEntity;
+        this.transactionPinEntity = transactionPinEntity;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
+    }
 }
