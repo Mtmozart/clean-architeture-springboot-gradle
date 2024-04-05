@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.FindWalletByTaxNumberGeteway;
+import br.com.curso.application.gateway.FindWalletByTaxNumberGeteway;
 import br.com.curso.core.domain.Wallet;
 import br.com.curso.core.exception.NotFoundException;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;

@@ -1,8 +1,7 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.TransactionValidationGeteway;
+import br.com.curso.application.gateway.TransactionValidationGeteway;
 import br.com.curso.core.domain.Transaction;
-import br.com.curso.core.exception.InternalServerErrorException;
 import br.com.curso.core.exception.TransferException;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;
 import br.com.curso.usecase.TransactionValidationUseCase;

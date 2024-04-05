@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.TaxNumberAvailableGeteway;
+import br.com.curso.application.gateway.TaxNumberAvailableGeteway;
 import br.com.curso.usecase.TaxNumberAvailableUseCase;
 
 public class TaxNumberAvailableUseCaseImpl implements TaxNumberAvailableUseCase {

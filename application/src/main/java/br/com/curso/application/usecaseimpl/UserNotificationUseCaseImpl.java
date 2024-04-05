@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.UserNotificationGeteway;
+import br.com.curso.application.gateway.UserNotificationGeteway;
 import br.com.curso.core.domain.Transaction;
 import br.com.curso.usecase.UserNotificationUseCase;
 

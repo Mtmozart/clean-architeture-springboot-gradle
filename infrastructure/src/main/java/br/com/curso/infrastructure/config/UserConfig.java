@@ -1,8 +1,9 @@
 package br.com.curso.infrastructure.config;
 
-import br.com.curso.application.geteway.CreateUserGeteway;
-import br.com.curso.application.geteway.EmailAvailableGeteway;
-import br.com.curso.application.geteway.TaxNumberAvailableGeteway;
+
+import br.com.curso.application.gateway.CreateUserGeteway;
+import br.com.curso.application.gateway.EmailAvailableGeteway;
+import br.com.curso.application.gateway.TaxNumberAvailableGeteway;
 import br.com.curso.application.usecaseimpl.CreateUserUseCaseImpl;
 import br.com.curso.application.usecaseimpl.EmailAvailableUseCaseImpl;
 import br.com.curso.application.usecaseimpl.TaxNumberAvailableUseCaseImpl;
@@ -14,17 +15,19 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class UserConfig {
+
     @Bean
-    public TaxNumberAvailableUseCase taxNumberAvailableUseCase(TaxNumberAvailableGeteway taxNumberAvailableGeteway){
-        return new TaxNumberAvailableUseCaseImpl(taxNumberAvailableGeteway);
-    }
-    @Bean
-    public EmailAvailableUseCase emailAvailableUseCase(EmailAvailableGeteway emailAvailableGeteway){
-        return new EmailAvailableUseCaseImpl(emailAvailableGeteway);
+    public TaxNumberAvailableUseCase taxNumberAvailableUseCase(TaxNumberAvailableGeteway taxNumberAvailableGateway){
+        return new TaxNumberAvailableUseCaseImpl(taxNumberAvailableGateway);
     }
 
     @Bean
-    public CreateUserUseCase createUserUseCaseCase(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGeteway createUserGeteway){
-        return new CreateUserUseCaseImpl(taxNumberAvailableUseCase, emailAvailableUseCase, createUserGeteway);
+    public EmailAvailableUseCase emailAvailableUseCase(EmailAvailableGeteway emailAvailableGateway){
+        return new EmailAvailableUseCaseImpl(emailAvailableGateway);
+    }
+
+    @Bean
+    public CreateUserUseCase createUserUseCase(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGeteway createUserGateway){
+        return new CreateUserUseCaseImpl(taxNumberAvailableUseCase, emailAvailableUseCase, createUserGateway);
     }
 }

@@ -1,6 +1,6 @@
 package br.com.curso.infrastructure.service;
 
-import br.com.curso.application.geteway.TaxNumberAvailableGeteway;
+import br.com.curso.application.gateway.TaxNumberAvailableGeteway;
 import br.com.curso.infrastructure.repository.UserEntityRepository;
 import org.springframework.stereotype.Service;
 

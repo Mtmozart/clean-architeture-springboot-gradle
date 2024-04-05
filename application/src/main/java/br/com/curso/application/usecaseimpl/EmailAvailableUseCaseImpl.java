@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.EmailAvailableGeteway;
+import br.com.curso.application.gateway.EmailAvailableGeteway;
 import br.com.curso.usecase.EmailAvailableUseCase;
 
 public class EmailAvailableUseCaseImpl implements EmailAvailableUseCase {

@@ -1,7 +1,6 @@
 package br.com.curso.infrastructure.service;
 
-import br.com.curso.application.geteway.CreateUserGeteway;
-import br.com.curso.core.domain.Transaction;
+import br.com.curso.application.gateway.CreateUserGeteway;
 import br.com.curso.core.domain.User;
 import br.com.curso.core.domain.Wallet;
 import br.com.curso.infrastructure.mapper.TransactionPinMapper;

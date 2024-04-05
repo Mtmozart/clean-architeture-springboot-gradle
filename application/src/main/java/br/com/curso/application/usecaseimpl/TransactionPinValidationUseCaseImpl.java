@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.TransactionPinValidationGeteway;
+import br.com.curso.application.gateway.TransactionPinValidationGeteway;
 import br.com.curso.core.domain.TransactionPin;
 import br.com.curso.core.exception.PinException;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;

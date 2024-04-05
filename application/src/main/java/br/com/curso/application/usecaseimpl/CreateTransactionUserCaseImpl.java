@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.CreateTransactionGeteway;
+import br.com.curso.application.gateway.CreateTransactionGeteway;
 import br.com.curso.core.domain.Transaction;
 import br.com.curso.core.exception.TransferException;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;

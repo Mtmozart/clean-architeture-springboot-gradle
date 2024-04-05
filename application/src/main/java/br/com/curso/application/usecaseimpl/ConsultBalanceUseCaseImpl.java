@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.ConsultBalanceGeteway;
+import br.com.curso.application.gateway.ConsultBalanceGeteway;
 import br.com.curso.core.domain.Wallet;
 import br.com.curso.usecase.ConsultBalanceUseCase;
 

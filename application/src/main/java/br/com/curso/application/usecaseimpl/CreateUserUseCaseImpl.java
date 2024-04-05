@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.CreateUserGeteway;
+import br.com.curso.application.gateway.CreateUserGeteway;
 import br.com.curso.core.domain.TransactionPin;
 import br.com.curso.core.domain.User;
 import br.com.curso.core.domain.Wallet;

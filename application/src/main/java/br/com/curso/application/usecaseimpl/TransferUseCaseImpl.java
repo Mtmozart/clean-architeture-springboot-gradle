@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.geteway.TransferGateway;
+import br.com.curso.application.gateway.TransferGateway;
 import br.com.curso.core.domain.Transaction;
 import br.com.curso.core.domain.Wallet;
 import br.com.curso.core.exception.*;
