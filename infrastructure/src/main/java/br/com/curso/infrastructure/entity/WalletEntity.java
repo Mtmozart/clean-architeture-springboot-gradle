@@ -1,6 +1,6 @@
 package br.com.curso.infrastructure.entity;
 
-/*
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -45,4 +45,4 @@ public class WalletEntity {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
-}*/
+}

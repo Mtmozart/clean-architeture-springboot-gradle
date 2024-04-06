@@ -1,5 +1,5 @@
 package br.com.curso.infrastructure.entity;
-/*
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Entity
 @Table(name = "TransactionsPin")
 public class TransactionPinEntity {
@@ -42,4 +42,4 @@ public class TransactionPinEntity {
         this.updatedAt = updatedAt;
     }
 
-}*/
+}

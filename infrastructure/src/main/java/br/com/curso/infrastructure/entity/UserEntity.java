@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "Users")
 public class UserEntity {
