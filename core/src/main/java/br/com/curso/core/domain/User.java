@@ -35,6 +35,7 @@ public class User {
         this.taxNumber = taxNumber;
         this.fullname = fullname;
         this.type = type;
+        this.createdAt = LocalDateTime.now();
     }
 
     public User() {

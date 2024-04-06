@@ -22,12 +22,6 @@ public class UserController {
         this.userMapper = userMapper;
     }
 
-    public UserController(CreateUserRequest request, UserMapper userMapper) throws Exception, TransactionPinException {
-        this.userMapper = userMapper;
-        createUserUseCase.create(userMapper.toUser(request), request.pin());
-        this.createUserUseCase = createUserUseCase;
-    }
-
     @Transactional
     @PostMapping("/createUser")
     public BaseResponse<String> createUser(@RequestBody CreateUserRequest request) throws Exception, TransactionPinException {

@@ -26,7 +26,7 @@ public class UserMapper {
                 request.email(),
                 request.password(),
                 new TaxNumber(request.taxNumber()),
-                request.fullName(),
+                request.fullname(),
                 request.type()
         );
     }

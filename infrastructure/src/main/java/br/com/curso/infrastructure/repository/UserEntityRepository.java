@@ -1,8 +1,12 @@
 package br.com.curso.infrastructure.repository;
 
+import br.com.curso.infrastructure.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface UserEntityRepository extends JpaRepository<UserEntityRepository, UUID> {
+public interface UserEntityRepository extends JpaRepository<UserEntity, UUID> {
+    boolean existsByTaxNumber(String taxNumber);
+
+    boolean existsByEmail(String email);
 }

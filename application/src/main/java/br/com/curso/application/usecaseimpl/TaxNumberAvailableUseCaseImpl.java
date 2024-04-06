@@ -11,7 +11,7 @@ public class TaxNumberAvailableUseCaseImpl implements TaxNumberAvailableUseCase 
         this.taxNumberAvailableGateway = taxNumberAvailableGateway;
     }
     @Override
-    public Boolean taxNumberAvaliable(String taxNumber) {
+    public Boolean taxNumberAvailable(String taxNumber) {
         return taxNumberAvailableGateway.taxNumberAvailable(taxNumber);
     }
 }

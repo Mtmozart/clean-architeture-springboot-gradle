@@ -19,12 +19,10 @@ public class UserConfig {
     public TaxNumberAvailableUseCase taxNumberAvailableUseCase(TaxNumberAvailableGateway taxNumberAvailableGateway){
         return new TaxNumberAvailableUseCaseImpl(taxNumberAvailableGateway);
     }
-
     @Bean
     public EmailAvailableUseCase emailAvailableUseCase(EmailAvailableGateway emailAvailableGateway){
         return new EmailAvailableUseCaseImpl(emailAvailableGateway);
     }
-
     @Bean
     public CreateUserUseCase createUserUseCase(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGateway createUserGateway){
         return new CreateUserUseCaseImpl(taxNumberAvailableUseCase, emailAvailableUseCase, createUserGateway);
