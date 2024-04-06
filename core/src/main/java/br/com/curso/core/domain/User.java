@@ -13,7 +13,6 @@ public class User {
     private String password;
     private TaxNumber taxNumber;
     private String fullname;
-
     private UserTypeEnum type;
     private LocalDateTime createdAt;
     private LocalDateTime updateAt;
