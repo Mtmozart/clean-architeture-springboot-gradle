@@ -4,7 +4,7 @@ import br.com.curso.core.domain.Wallet;
 
 import java.math.BigDecimal;
 
-public interface ConsultBalanceGeteway {
+public interface ConsultBalanceGateway {
 
     BigDecimal consult(Wallet wallet);
 }

@@ -1,5 +1,5 @@
 package br.com.curso.application.gateway;
 
-public interface UserAuthenticateGeteway {
+public interface UserAuthenticateGateway {
     Boolean authenticate(String username, String password);
 }

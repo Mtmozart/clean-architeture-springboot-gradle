@@ -1,5 +1,5 @@
 package br.com.curso.application.gateway;
 
-public interface EmailAvailableGeteway {
+public interface EmailAvailableGateway {
     Boolean emailAvailable(String email);
 }

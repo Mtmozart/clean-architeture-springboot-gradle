@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.gateway.CreateUserGeteway;
+import br.com.curso.application.gateway.CreateUserGateway;
 import br.com.curso.core.domain.TransactionPin;
 import br.com.curso.core.domain.User;
 import br.com.curso.core.domain.Wallet;
@@ -17,13 +17,13 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
     private TaxNumberAvailableUseCase taxNumberAvailableUseCase;
 
     private EmailAvailableUseCase emailAvailableUseCase;
-    private CreateUserGeteway createUserGeteway;
+    private CreateUserGateway createUserGateway;
 
 
-    public CreateUserUseCaseImpl(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGeteway createUserGeteway) {
+    public CreateUserUseCaseImpl(TaxNumberAvailableUseCase taxNumberAvailableUseCase, EmailAvailableUseCase emailAvailableUseCase, CreateUserGateway createUserGateway) {
         this.taxNumberAvailableUseCase = taxNumberAvailableUseCase;
         this.emailAvailableUseCase = emailAvailableUseCase;
-        this.createUserGeteway = createUserGeteway;
+        this.createUserGateway = createUserGateway;
 
     }
 
@@ -37,7 +37,7 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
             throw new EmailException(ErrorCodeEnum.ON0003.getMessage(), ErrorCodeEnum.ON0003.getCode());
         }
 
-        if(!createUserGeteway.create(
+        if(!createUserGateway.create(
                 user,
                 new Wallet(new TransactionPin(pin),
                         BigDecimal.ZERO, user)

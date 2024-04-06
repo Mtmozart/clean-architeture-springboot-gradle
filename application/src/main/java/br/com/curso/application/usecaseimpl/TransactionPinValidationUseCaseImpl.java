@@ -1,6 +1,6 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.gateway.TransactionPinValidationGeteway;
+import br.com.curso.application.gateway.TransactionPinValidationGateway;
 import br.com.curso.core.domain.TransactionPin;
 import br.com.curso.core.exception.PinException;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;
@@ -8,11 +8,11 @@ import br.com.curso.usecase.TransactionPinValidationUseCase;
 import br.com.curso.usecase.UpdateTransactionPinUseCase;
 
 public class TransactionPinValidationUseCaseImpl implements TransactionPinValidationUseCase {
-    private TransactionPinValidationGeteway transactionPinValidationGeteway;
+    private TransactionPinValidationGateway transactionPinValidationGateway;
     private UpdateTransactionPinUseCase updateTransactionPinUseCase;
 
-    public TransactionPinValidationUseCaseImpl(TransactionPinValidationGeteway transactionPinValidationGeteway, UpdateTransactionPinUseCase updateTransactionPinUseCase) {
-        this.transactionPinValidationGeteway = transactionPinValidationGeteway;
+    public TransactionPinValidationUseCaseImpl(TransactionPinValidationGateway transactionPinValidationGateway, UpdateTransactionPinUseCase updateTransactionPinUseCase) {
+        this.transactionPinValidationGateway = transactionPinValidationGateway;
         this.updateTransactionPinUseCase = updateTransactionPinUseCase;
     }
 
@@ -21,7 +21,7 @@ public class TransactionPinValidationUseCaseImpl implements TransactionPinValida
         if(transactionPin.getBlocker()){
             throw new PinException(ErrorCodeEnum.PIN0001.getMessage(), ErrorCodeEnum.PIN0001.getCode());
         }
-        if(!transactionPinValidationGeteway.validate(transactionPin)){
+        if(!transactionPinValidationGateway.validate(transactionPin)){
         transactionPin.setAttempt();
         var transactionPinUpdate = updateTransactionPinUseCase.update(transactionPin);
         throw new PinException(ErrorCodeEnum.pin0001GetMessage(transactionPinUpdate.getAttempt()), ErrorCodeEnum.PIN0002.getCode());

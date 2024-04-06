@@ -1,17 +1,17 @@
 package br.com.curso.application.usecaseimpl;
 
-import br.com.curso.application.gateway.EmailAvailableGeteway;
+import br.com.curso.application.gateway.EmailAvailableGateway;
 import br.com.curso.usecase.EmailAvailableUseCase;
 
 public class EmailAvailableUseCaseImpl implements EmailAvailableUseCase {
-    private EmailAvailableGeteway emailAvailableGeteway;
+    private EmailAvailableGateway emailAvailableGateway;
 
-    public EmailAvailableUseCaseImpl(EmailAvailableGeteway emailAvailableGeteway) {
-        this.emailAvailableGeteway = emailAvailableGeteway;
+    public EmailAvailableUseCaseImpl(EmailAvailableGateway emailAvailableGateway) {
+        this.emailAvailableGateway = emailAvailableGateway;
     }
 
     @Override
     public Boolean emailAvailable(String email) {
-        return emailAvailableGeteway.emailAvailable(email);
+        return emailAvailableGateway.emailAvailable(email);
     }
 }

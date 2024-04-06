@@ -1,5 +1,5 @@
 package br.com.curso.application.gateway;
 
-public interface TaxNumberAvailableGeteway {
+public interface TaxNumberAvailableGateway {
     Boolean taxNumberAvailable(String taxNumber);
 }
