@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "TransactionsPin")
+@Table(name = "transactions_pin")
 public class TransactionPinEntity {
 
     @Column(name = "Id")
