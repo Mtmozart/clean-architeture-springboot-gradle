@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "wallets")
+@Table(name = "Wallets")
 public class WalletEntity {
 
     @Column(name = "Id")

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "transactions_pin")
+@Table(name = "TransactionsPin")
 public class TransactionPinEntity {
 
     @Column(name = "Id")
@@ -41,5 +41,4 @@ public class TransactionPinEntity {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
-
 }
