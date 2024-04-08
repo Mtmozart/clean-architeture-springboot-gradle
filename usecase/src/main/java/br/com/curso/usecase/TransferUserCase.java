@@ -6,5 +6,5 @@ import br.com.curso.core.exception.*;
 import java.math.BigDecimal;
 
 public interface TransferUserCase {
-    Boolean transfer(String from , String toTaxNumber, BigDecimal value, String pin) throws InternalServerErrorException, TransferException, NotFoundException, NotificationException, PinException;
+    Boolean transfer(String from , String toTaxNumber, BigDecimal value, String pin) throws Exception;
 }
