@@ -8,6 +8,11 @@ import br.com.curso.usecase.CreateTransactionUserCase;
 
 public class CreateTransactionUserCaseImpl implements CreateTransactionUserCase {
     private CreateTransactionGateway createTransactionGateway;
+
+    public CreateTransactionUserCaseImpl(CreateTransactionGateway createTransactionGateway) {
+        this.createTransactionGateway = createTransactionGateway;
+    }
+
     @Override
     public Transaction create(Transaction transaction) throws TransferException {
        var transactionSaved = createTransactionGateway.create(transaction);
