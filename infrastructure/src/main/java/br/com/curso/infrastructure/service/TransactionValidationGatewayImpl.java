@@ -1,4 +1,4 @@
-package br.com.curso.infrastructure.entity;
+package br.com.curso.infrastructure.service;
 
 import br.com.curso.application.gateway.TransactionValidationGateway;
 import br.com.curso.core.domain.Transaction;
