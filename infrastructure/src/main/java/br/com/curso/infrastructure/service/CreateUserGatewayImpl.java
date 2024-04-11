@@ -24,6 +24,7 @@ public class CreateUserGatewayImpl implements CreateUserGateway {
     private WalletEntityRepository walletEntityRepository;
     private WalletMapper walletMapper;
 
+
     public CreateUserGatewayImpl(UserEntityRepository userEntityRepository, UserMapper userMapper, TransactionPinEntityRepository transactionPinEntityRepository, TransactionPinMapper transactionPinMapper, WalletEntityRepository walletEntityRepository, WalletMapper walletMapper) {
         this.userEntityRepository = userEntityRepository;
         this.userMapper = userMapper;

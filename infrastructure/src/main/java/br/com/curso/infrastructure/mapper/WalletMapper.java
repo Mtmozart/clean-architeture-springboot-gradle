@@ -12,8 +12,9 @@ public class WalletMapper {
     private TransactionPinMapper transactionPinMapper;
     private UserMapper userMapper;
 
-    public WalletMapper(TransactionPinMapper transactionPinMapper) {
+    public WalletMapper(TransactionPinMapper transactionPinMapper, UserMapper userMapper) {
         this.transactionPinMapper = transactionPinMapper;
+        this.userMapper = userMapper;
     }
 
     public WalletEntity toWalletEntity(Wallet wallet, UserEntity userEntity, TransactionPinEntity transactionPinEntity){
