@@ -10,6 +10,10 @@ public class TransactionValidationUseCaseImpl implements TransactionValidationUs
     private TransactionValidationGateway transactionValidationGateway;
 
 
+    public TransactionValidationUseCaseImpl(TransactionValidationGateway transactionValidationGateway) {
+        this.transactionValidationGateway = transactionValidationGateway;
+    }
+
     @Override
     public Boolean validate(Transaction transaction) throws TransferException {
         if(!transactionValidationGateway.validate(transaction)){

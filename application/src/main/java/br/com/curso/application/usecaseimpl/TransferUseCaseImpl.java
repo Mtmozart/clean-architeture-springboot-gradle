@@ -13,15 +13,15 @@ public class TransferUseCaseImpl implements TransferUserCase {
 
     private FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
     private TransactionValidationUseCase transactionValidationUseCase;
-    private CreateTransactionUserCase createTransactionUserCase;
+    private CreateTransactionUseCase createTransactionUseCase;
     private TransferGateway transferGateway;
     private UserNotificationUseCase userNotificationUseCase;
     private TransactionPinValidationUseCase transactionPinValidationUseCase;
 
-    public TransferUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase, TransactionValidationUseCase transactionValidationUseCase, CreateTransactionUserCase createTransactionUserCase, TransferGateway transferGateway, UserNotificationUseCase userNotificationUseCase, TransactionPinValidationUseCase transactionPinValidationUseCase) {
+    public TransferUseCaseImpl(FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase, TransactionValidationUseCase transactionValidationUseCase, CreateTransactionUseCase createTransactionUseCase, TransferGateway transferGateway, UserNotificationUseCase userNotificationUseCase, TransactionPinValidationUseCase transactionPinValidationUseCase) {
         this.findWalletByTaxNumberUseCase = findWalletByTaxNumberUseCase;
         this.transactionValidationUseCase = transactionValidationUseCase;
-        this.createTransactionUserCase = createTransactionUserCase;
+        this.createTransactionUseCase = createTransactionUseCase;
         this.transferGateway = transferGateway;
         this.userNotificationUseCase = userNotificationUseCase;
         this.transactionPinValidationUseCase = transactionPinValidationUseCase;
@@ -35,7 +35,7 @@ public class TransferUseCaseImpl implements TransferUserCase {
         transactionPinValidationUseCase.validate(from.getTransactionPin());
         from.transfer(value);
         to.receiveTransfer(value);
-        var transaction = createTransactionUserCase.create(new Transaction(from, to, value));
+        var transaction = createTransactionUseCase.create(new Transaction(from, to, value));
 
         transactionValidationUseCase.validate(transaction);
 

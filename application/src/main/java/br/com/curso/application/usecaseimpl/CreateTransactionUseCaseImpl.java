@@ -4,12 +4,12 @@ import br.com.curso.application.gateway.CreateTransactionGateway;
 import br.com.curso.core.domain.Transaction;
 import br.com.curso.core.exception.TransferException;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;
-import br.com.curso.usecase.CreateTransactionUserCase;
+import br.com.curso.usecase.CreateTransactionUseCase;
 
-public class CreateTransactionUserCaseImpl implements CreateTransactionUserCase {
+public class CreateTransactionUseCaseImpl implements CreateTransactionUseCase {
     private CreateTransactionGateway createTransactionGateway;
 
-    public CreateTransactionUserCaseImpl(CreateTransactionGateway createTransactionGateway) {
+    public CreateTransactionUseCaseImpl(CreateTransactionGateway createTransactionGateway) {
         this.createTransactionGateway = createTransactionGateway;
     }
 
