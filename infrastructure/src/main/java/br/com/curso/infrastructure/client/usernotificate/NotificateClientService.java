@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NotificateClientService {
+
     private NotificationClient notificationClient;
 
     public NotificateClientService(NotificationClient notificationClient) {

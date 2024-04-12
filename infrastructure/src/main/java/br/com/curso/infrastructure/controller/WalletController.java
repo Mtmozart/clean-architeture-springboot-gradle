@@ -28,6 +28,7 @@ public class WalletController {
     @PostMapping("/transfer")
     public BaseResponse<String> transfer(@RequestBody TransferRequest transferRequest) throws Exception {
         transferUserCase.transfer(transferRequest.fromTaxNumber(), transferRequest.toTaxNumber(), transferRequest.value(), transferRequest.pin());
+        return null;
     }
 
 }

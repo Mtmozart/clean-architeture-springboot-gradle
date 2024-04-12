@@ -4,10 +4,11 @@ import br.com.curso.application.gateway.UserNotificationGateway;
 import br.com.curso.core.domain.Transaction;
 import br.com.curso.usecase.UserNotificationUseCase;
 
-public class UserNotificationGatewayImpl implements UserNotificationGateway {
+public class UserNotificationUseCaseImpl implements UserNotificationUseCase {
+
     private UserNotificationGateway userNotificationGateway;
 
-    public UserNotificationGatewayImpl(UserNotificationGateway userNotificationGateway) {
+    public UserNotificationUseCaseImpl(UserNotificationGateway userNotificationGateway) {
         this.userNotificationGateway = userNotificationGateway;
     }
 

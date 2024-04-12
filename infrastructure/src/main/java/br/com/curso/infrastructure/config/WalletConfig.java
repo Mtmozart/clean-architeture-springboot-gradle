@@ -28,12 +28,7 @@ public class WalletConfig {
     }
     @Bean
     public UserNotificationUseCase userNotificationUseCase(UserNotificationGateway userNotificationGateway) {
-        return new UserNotificationGatewayImpl(userNotificationGateway);
-    }
-
-    @Bean
-    public UpdateTransactionPinUseCase updateTransactionPinUseCase(UpdateTransactionPinUseCaseImpl updateTransactionPinGateway) {
-        return new UpdateTransactionPinUseCaseImpl(updateTransactionPinGateway);
+        return new UserNotificationUseCaseImpl(userNotificationGateway);
     }
 
     @Bean

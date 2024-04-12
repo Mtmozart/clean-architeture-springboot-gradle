@@ -22,7 +22,6 @@ public class UserNotificationGatewayImpl implements UserNotificationGateway {
         if (response == true) {
             log.info("Usuário notificado com sucesso::UserNotificationGatewayImpl");
         }
-
         return response;
     }
 }
