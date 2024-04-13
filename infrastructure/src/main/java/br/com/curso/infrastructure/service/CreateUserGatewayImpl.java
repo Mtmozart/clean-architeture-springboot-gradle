@@ -16,14 +16,12 @@ import static br.com.curso.infrastructure.utils.Utilities.log;
 
 @Service
 public class CreateUserGatewayImpl implements CreateUserGateway {
-
     private UserEntityRepository userEntityRepository;
     private UserMapper userMapper;
     private TransactionPinEntityRepository transactionPinEntityRepository;
     private TransactionPinMapper transactionPinMapper;
     private WalletEntityRepository walletEntityRepository;
     private WalletMapper walletMapper;
-
 
     public CreateUserGatewayImpl(UserEntityRepository userEntityRepository, UserMapper userMapper, TransactionPinEntityRepository transactionPinEntityRepository, TransactionPinMapper transactionPinMapper, WalletEntityRepository walletEntityRepository, WalletMapper walletMapper) {
         this.userEntityRepository = userEntityRepository;
@@ -35,7 +33,6 @@ public class CreateUserGatewayImpl implements CreateUserGateway {
     }
 
     @Override
-    @Transactional
     public Boolean create(User user, Wallet wallet) {
         try {
             log.info("Inicio da criação do usuário::CreateUserGatewayImpl");

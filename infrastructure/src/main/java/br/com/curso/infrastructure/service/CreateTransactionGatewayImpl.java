@@ -5,11 +5,14 @@ import br.com.curso.core.domain.Transaction;
 import br.com.curso.infrastructure.entity.TransactionEntity;
 import br.com.curso.infrastructure.mapper.TransactionMapper;
 import br.com.curso.infrastructure.repository.TransactionEntityRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateTransactionGatewayImpl implements CreateTransactionGateway {
 
     private TransactionEntityRepository transactionEntityRepository;
     private TransactionMapper transactionMapper;
+
 
     public CreateTransactionGatewayImpl(TransactionEntityRepository transactionEntityRepository, TransactionMapper transactionMapper) {
         this.transactionEntityRepository = transactionEntityRepository;
