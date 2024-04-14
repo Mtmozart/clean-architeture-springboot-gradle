@@ -40,6 +40,9 @@ public class WalletConfig {
         return new TransferUseCaseImpl(findWalletByTaxNumberUseCase, transactionValidateUseCase, createTransactionUseCase, transferGateway, userNotificationUseCase, transactionPinValidateUseCase);
     }
 
-
+    @Bean
+    public UpdateTransactionPinUseCase updateTransactionPinUseCase(UpdateTransactionPinGateway updateTransactionPinGateway) {
+        return new UpdateTransactionPinUseCaseImpl(updateTransactionPinGateway);
+    }
 
 }

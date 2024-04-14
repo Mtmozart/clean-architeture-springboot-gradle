@@ -25,6 +25,8 @@ public enum ErrorCodeEnum {
         this.code = code;
     }
 
+
+
     public String getMessage() {
         return message;
     }

@@ -17,7 +17,7 @@ public class TransactionPinValidationGatewayImpl implements TransactionPinValida
     }
 
     @Override
-    public boolean validate(TransactionPin transactionPin) {
+    public boolean validate(TransactionPin transactionPin, String pin) {
         var transactionPinSaved = transactionPinEntityRepository.findById(transactionPin.getId());
         if (transactionPinSaved.isEmpty()){
             return false;

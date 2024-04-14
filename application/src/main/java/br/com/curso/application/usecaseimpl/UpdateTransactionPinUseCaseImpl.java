@@ -5,6 +5,7 @@ import br.com.curso.core.domain.TransactionPin;
 import br.com.curso.usecase.UpdateTransactionPinUseCase;
 
 public class UpdateTransactionPinUseCaseImpl implements UpdateTransactionPinUseCase {
+
     private UpdateTransactionPinGateway updateTransactionPinGateway;
 
     public UpdateTransactionPinUseCaseImpl(UpdateTransactionPinGateway updateTransactionPinGateway) {
