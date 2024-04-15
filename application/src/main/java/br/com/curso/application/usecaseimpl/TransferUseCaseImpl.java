@@ -35,7 +35,9 @@ public class TransferUseCaseImpl implements TransferUserCase {
         transactionPinValidationUseCase.validate(from.getTransactionPin(), pin);
 
         from.transfer(value);
+        System.out.println(from.toString());
         to.receiveTransfer(value);
+        System.out.println(to.toString());
         var transaction = createTransactionUseCase.create(new Transaction(from, to, value));
 
         transactionValidationUseCase.validate(transaction);

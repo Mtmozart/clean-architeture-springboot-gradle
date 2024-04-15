@@ -49,7 +49,7 @@ public class Wallet {
     }
 
     public void receiveValue(BigDecimal value){
-        this.balance.add(value);
+        this.balance = this.balance.add(value);
     }
 
     public void transfer(BigDecimal value) throws TransferException {
@@ -120,5 +120,17 @@ public class Wallet {
         result = 31 * result + createdAt.hashCode();
         result = 31 * result + (updateAt != null ? updateAt.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Wallet{" +
+                "id=" + id +
+                ", transactionPin=" + transactionPin +
+                ", balance=" + balance +
+                ", user=" + user +
+                ", createdAt=" + createdAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
