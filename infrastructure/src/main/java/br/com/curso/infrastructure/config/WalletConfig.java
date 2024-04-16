@@ -32,7 +32,7 @@ public class WalletConfig {
     }
 
     @Bean
-    public CreateTransactionUseCase createTransactionUseCase(CreateTransactionGateway createTransactionGateway){
+    public CreateTransactionUseCase createTransactionUseCase(CreateTransactionGateway createTransactionGateway) {
         return new CreateTransactionUseCaseImpl(createTransactionGateway);
     }
     @Bean

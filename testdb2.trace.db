@@ -488,3 +488,57 @@ org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-21
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
 2024-04-15 23:27:07 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 11:54:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 11:56:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:00:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:02:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:06:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:29:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:30:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:31:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:40:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:42:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:43:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:43:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 12:55:42 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'10000,00' (WALLETS: ""BALANCE"" NUMERIC(38, 2) NOT NULL)"; SQL statement:
+UPDATE "PUBLIC"."WALLETS" SET "BALANCE"=? ,"CREATED_AT"=? ,"ID"=? ,"TRANSACTION_PIN_ID"=? ,"UPDATED_AT"=? ,"USER_ID"=?  WHERE "ID"=? [22018-214]
+2024-04-16 12:55:42 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'10000,00' (WALLETS: ""BALANCE"" NUMERIC(38, 2) NOT NULL)"; SQL statement:
+UPDATE "PUBLIC"."WALLETS" SET "BALANCE"=? ,"CREATED_AT"=? ,"ID"=? ,"TRANSACTION_PIN_ID"=? ,"UPDATED_AT"=? ,"USER_ID"=?  WHERE "ID"=? [22018-214]
+2024-04-16 12:55:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:01:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:05:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:06:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:08:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:14:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:16:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:17:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:20:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:21:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:22:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-16 13:22:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

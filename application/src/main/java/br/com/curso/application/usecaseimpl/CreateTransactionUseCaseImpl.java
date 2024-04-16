@@ -15,10 +15,12 @@ public class CreateTransactionUseCaseImpl implements CreateTransactionUseCase {
 
     @Override
     public Transaction create(Transaction transaction) throws Exception {
-       var transactionSaved = createTransactionGateway.create(transaction);
-       if(transactionSaved == null){
-           throw new TransferException(ErrorCodeEnum.TR0004.getMessage(), ErrorCodeEnum.TR0004.getCode());
-       }
-        return transactionSaved;
+        var transactionSaved = createTransactionGateway.create(transaction);
+
+        if (transactionSaved == null){
+            throw new TransferException(ErrorCodeEnum.TR0003.getMessage(), ErrorCodeEnum.TR0003.getCode());
+        }
+
+        return  transactionSaved;
     }
 }

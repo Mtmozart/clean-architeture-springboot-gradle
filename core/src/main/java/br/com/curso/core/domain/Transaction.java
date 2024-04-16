@@ -114,4 +114,17 @@ public class Transaction {
         result = 31 * result + (getUpdatedAt() != null ? getUpdatedAt().hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", fromWallet=" + fromWallet.getId().toString() +
+                ", toWallet=" + toWallet.getId().toString() +
+                ", value=" + value +
+                ", status=" + status +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

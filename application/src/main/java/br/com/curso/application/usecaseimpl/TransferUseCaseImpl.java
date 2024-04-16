@@ -31,14 +31,18 @@ public class TransferUseCaseImpl implements TransferUseCase {
     public Boolean transfer(String fromTaxNumber, String toTaxNumber, BigDecimal value, String pin) throws Exception {
         Wallet from = findWalletByTaxNumberUseCase.findByTaxNumber(fromTaxNumber);
         Wallet to = findWalletByTaxNumberUseCase.findByTaxNumber(toTaxNumber);
-
         transactionPinValidationUseCase.validate(from.getTransactionPin(), pin);
-
         from.transfer(value);
-        System.out.println(from.toString());
         to.receiveTransfer(value);
-        System.out.println(to.toString());
-        var transaction = createTransactionUseCase.create(new Transaction(from, to, value));
+        //TODO:CORRIGIR ERRO
+      Transaction t =  new Transaction(
+                from, to, value
+        );
+        System.out.println("---------------Criação do transaction objeto----------------");
+        System.out.println(t.toString());
+        var transaction = createTransactionUseCase.create(t);
+        System.out.println("---------------Chamamento de outros métodos.----------------");
+        System.out.println(transaction.toString());
 
         transactionValidationUseCase.validate(transaction);
 

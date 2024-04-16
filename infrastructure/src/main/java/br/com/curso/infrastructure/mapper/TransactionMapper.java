@@ -40,7 +40,7 @@ public class TransactionMapper {
         return new Transaction(
                 transactionEntity.getId(),
                 walletMapper.toWallet(transactionEntity.getFromWallet()),
-                walletMapper.toWallet(transactionEntity.getFromWallet()),
+                walletMapper.toWallet(transactionEntity.getToWallet()),
                 transactionEntity.getValue(),
                 transactionEntity.getStatus(),
                 transactionEntity.getCreatedAt(),
