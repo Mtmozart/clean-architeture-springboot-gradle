@@ -9,7 +9,7 @@ import br.com.curso.usecase.*;
 
 import java.math.BigDecimal;
 
-public class TransferUseCaseImpl implements TransferUserCase {
+public class TransferUseCaseImpl implements TransferUseCase {
 
     private FindWalletByTaxNumberUseCase findWalletByTaxNumberUseCase;
     private TransactionValidationUseCase transactionValidationUseCase;
@@ -49,8 +49,6 @@ public class TransferUseCaseImpl implements TransferUserCase {
         if(!userNotificationUseCase.notificate(transaction, to.getUser().getEmail())){
             throw new NotificationException(ErrorCodeEnum.NO0001.getMessage(), ErrorCodeEnum.NO0001.getCode());
         }
-
-
         return true;
     }
 }

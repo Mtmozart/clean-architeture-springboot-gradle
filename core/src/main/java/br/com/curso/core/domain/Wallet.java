@@ -48,10 +48,6 @@ public class Wallet {
         return balance;
     }
 
-    public void receiveValue(BigDecimal value){
-        this.balance = this.balance.add(value);
-    }
-
     public void transfer(BigDecimal value) throws TransferException {
         if (this.user.getType() == UserTypeEnum.SHOPKEEPER){
             throw new TransferException(ErrorCodeEnum.TR0001.getMessage(), ErrorCodeEnum.TR0001.getCode());
@@ -66,7 +62,6 @@ public class Wallet {
 
     public void receiveTransfer(BigDecimal value){
          this.balance = this.balance.add(value);
-
     }
 
     public User getUser() {
@@ -122,15 +117,5 @@ public class Wallet {
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "Wallet{" +
-                "id=" + id +
-                ", transactionPin=" + transactionPin +
-                ", balance=" + balance +
-                ", user=" + user +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updateAt +
-                '}';
-    }
+
 }

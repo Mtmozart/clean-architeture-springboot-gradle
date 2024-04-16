@@ -9,33 +9,37 @@ import br.com.curso.infrastructure.repository.TransactionEntityRepository;
 import br.com.curso.infrastructure.repository.WalletEntityRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import static br.com.curso.infrastructure.utils.Utilities.log;
+
 
 @Service
 public class TransferGatewayImpl implements TransferGateway {
     private WalletEntityRepository walletEntityRepository;
-    private TransactionEntityRepository transactionEntityRepository;
     private WalletMapper walletMapper;
     private TransactionMapper transactionMapper;
-    public TransferGatewayImpl(WalletEntityRepository walletEntityRepository, TransactionEntityRepository transactionEntityRepository, WalletMapper walletMapper, TransactionMapper transactionMapper) {
+    private TransactionEntityRepository transactionEntityRepository;
+
+    public TransferGatewayImpl(WalletEntityRepository walletEntityRepository, WalletMapper walletMapper, TransactionMapper transactionMapper, TransactionEntityRepository transactionEntityRepository) {
         this.walletEntityRepository = walletEntityRepository;
-        this.transactionEntityRepository = transactionEntityRepository;
         this.walletMapper = walletMapper;
         this.transactionMapper = transactionMapper;
+        this.transactionEntityRepository = transactionEntityRepository;
     }
 
     @Override
     @Transactional
     public Boolean transfer(Transaction transaction) {
-       try{
-           walletEntityRepository.save(walletMapper.toWalletEntityUpdate(transaction.getFromWallet()));
-           walletEntityRepository.save(walletMapper.toWalletEntityUpdate(transaction.getToWallet()));
-
-           transactionEntityRepository.save(transactionMapper.concludeTransaction(transaction));
-
-           return true;
-       }catch (Exception ex){
-           transactionEntityRepository.save(transactionMapper.cancelTransaction(transaction));
+        try {
+            log.info("Inicio da transferencia ::TransferGatewayImpl");
+            walletEntityRepository.save(walletMapper.toWalletEntityUpdate(transaction.getFromWallet()));
+            walletEntityRepository.save(walletMapper.toWalletEntityUpdate(transaction.getToWallet()));
+            transactionEntityRepository.save(transactionMapper.concludeTransaction(transaction));
+            log.info("Transferencia concluida::TransferGatewayImpl");
+            return true;
+        }catch (Exception e){
+            transactionEntityRepository.save(transactionMapper.cancelTransaction(transaction));
+            log.info("Transferencia cancelada::TransferGatewayImpl");
             return false;
-       }
+        }
     }
 }
