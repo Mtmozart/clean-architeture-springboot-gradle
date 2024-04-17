@@ -34,16 +34,8 @@ public class TransferUseCaseImpl implements TransferUseCase {
         transactionPinValidationUseCase.validate(from.getTransactionPin(), pin);
         from.transfer(value);
         to.receiveTransfer(value);
-        //TODO:CORRIGIR ERRO
-      Transaction t =  new Transaction(
-                from, to, value
-        );
-        System.out.println("---------------Criação do transaction objeto----------------");
-        System.out.println(t.toString());
-        var transaction = createTransactionUseCase.create(t);
-        System.out.println("---------------Chamamento de outros métodos.----------------");
-        System.out.println(transaction.toString());
 
+        var transaction = createTransactionUseCase.create(new Transaction( from, to, value));
         transactionValidationUseCase.validate(transaction);
 
         if (!transferGateway.transfer(transaction)) {

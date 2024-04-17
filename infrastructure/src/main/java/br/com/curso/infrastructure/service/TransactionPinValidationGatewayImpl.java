@@ -2,7 +2,7 @@ package br.com.curso.infrastructure.service;
 
 import br.com.curso.application.gateway.TransactionPinValidationGateway;
 import br.com.curso.core.domain.TransactionPin;
-import br.com.curso.infrastructure.repository.TransactionPinEntityRepository;
+import static br.com.curso.infrastructure.utils.Utilities.log;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -10,21 +10,14 @@ import java.util.Objects;
 @Service
 public class TransactionPinValidationGatewayImpl implements TransactionPinValidationGateway {
 
-    private TransactionPinEntityRepository transactionPinEntityRepository;
-
-    public TransactionPinValidationGatewayImpl(TransactionPinEntityRepository transactionPinEntityRepository) {
-        this.transactionPinEntityRepository = transactionPinEntityRepository;
-    }
-
     @Override
     public boolean validate(TransactionPin transactionPin, String pin) {
-        var transactionPinSaved = transactionPinEntityRepository.findById(transactionPin.getId());
-        if (transactionPinSaved.isEmpty()){
+        log.info("Inicio da validação da senha de transação::TransactionPinValidationGatewayImpl");
+        if (!Objects.equals(transactionPin.getPin(), pin)){
+            log.info("Senha incorreta::TransactionPinValidationGatewayImpl");
             return false;
         }
-        if (!Objects.equals(transactionPinSaved.get().getPin(), transactionPin.getPin())){
-            return false;
-        }
+        log.info("Senha correta::TransactionPinValidationGatewayImpl");
         return true;
     }
 }

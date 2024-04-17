@@ -1,4 +1,4 @@
-package br.com.curso.infrastructure.client.usernotificate;
+package br.com.curso.infrastructure.client.apivalidate.usernotificate;
 
 import org.springframework.stereotype.Service;
 

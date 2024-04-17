@@ -2,7 +2,7 @@ package br.com.curso.infrastructure.service;
 
 import br.com.curso.application.gateway.UserNotificationGateway;
 import br.com.curso.core.domain.Transaction;
-import br.com.curso.infrastructure.client.usernotificate.NotificateClientService;
+import br.com.curso.infrastructure.client.apivalidate.usernotificate.NotificateClientService;
 import org.springframework.stereotype.Service;
 import static br.com.curso.infrastructure.utils.Utilities.log;
 

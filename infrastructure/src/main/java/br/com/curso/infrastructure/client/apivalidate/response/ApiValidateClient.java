@@ -1,4 +1,4 @@
-package br.com.curso.infrastructure.client;
+package br.com.curso.infrastructure.client.apivalidate.response;
 
 import br.com.curso.infrastructure.client.dto.ApiValidateResponse;
 import org.springframework.cloud.openfeign.FeignClient;
