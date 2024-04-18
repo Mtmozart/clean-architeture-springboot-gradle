@@ -2,6 +2,7 @@ package br.com.curso.application.usecaseimpl;
 
 import br.com.curso.application.gateway.TransferGateway;
 import br.com.curso.core.domain.Transaction;
+import br.com.curso.core.domain.User;
 import br.com.curso.core.domain.Wallet;
 import br.com.curso.core.exception.*;
 import br.com.curso.core.exception.enums.ErrorCodeEnum;
@@ -28,23 +29,17 @@ public class TransferUseCaseImpl implements TransferUseCase {
     }
 
     @Override
-    public Boolean transfer(String fromTaxNumber, String toTaxNumber, BigDecimal value, String pin) throws Exception {
-        Wallet from = findWalletByTaxNumberUseCase.findByTaxNumber(fromTaxNumber);
-        Wallet to = findWalletByTaxNumberUseCase.findByTaxNumber(toTaxNumber);
-        transactionPinValidationUseCase.validate(from.getTransactionPin(), pin);
-        from.transfer(value);
-        to.receiveTransfer(value);
+    public Boolean transfer(Transaction transaction) throws Exception {
 
-        var transaction = createTransactionUseCase.create(new Transaction( from, to, value));
+        transaction.getFromWallet().transfer(transaction.getValue());
+        transaction.getToWallet().receiveTransfer(transaction.getValue());
+
         transactionValidationUseCase.validate(transaction);
 
         if (!transferGateway.transfer(transaction)) {
             throw new InternalServerErrorException(ErrorCodeEnum.TR0003.getMessage(), ErrorCodeEnum.TR0003.getCode());
         }
 
-        if(!userNotificationUseCase.notificate(transaction, to.getUser().getEmail())){
-            throw new NotificationException(ErrorCodeEnum.NO0001.getMessage(), ErrorCodeEnum.NO0001.getCode());
-        }
         return true;
     }
 }
